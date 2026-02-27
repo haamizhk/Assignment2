@@ -8,7 +8,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <assert.h>
-#include <stdef.h>
+#include <stddef.h>
 
 #ifndef S_SPLINT_S
 #include <sys/resource.h>
