@@ -1,5 +1,7 @@
 #ifndef STR_H
 #define STR_H
+#include <stddef.h>
+
 
 /* Returns the number of bytes in the string pointed to by *src,
     excluding the null byte at the end. The programmer must ensure that
