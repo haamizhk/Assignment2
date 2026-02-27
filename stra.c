@@ -73,7 +73,8 @@ char *Str_search(const char haystack[], const char needle[])
         {
             size_t possible_match_index = haystack_index;
             needle_index = 0;
-            while (needle[needle_index] != '\0' && haystack[possible_match_index] == needle[needle_index])
+            while (needle[needle_index] != '\0' &&
+                haystack[possible_match_index] == needle[needle_index])
             {
                 possible_match_index++;
                 needle_index++;

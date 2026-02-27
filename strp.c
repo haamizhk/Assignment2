@@ -78,7 +78,8 @@ char *Str_search(const char *haystack, const char *needle)
         {
             haystack_trace = haystack;
             needle_trace = needle;
-            while (*needle_trace != '\0' && *haystack_trace == *needle_trace)
+            while (*needle_trace != '\0' &&
+                *haystack_trace == *needle_trace)
             {
                 if (*haystack_trace == '\0')
                 {
