@@ -51,7 +51,7 @@ static size_t replaceAndWrite(const char *pcLine,
       replace_count++;
       pcTrace = pcMatch + from_length;
    }
-   return replace_count;
+   return replace_count+1;
 }
 
 /*--------------------------------------------------------------------*/
