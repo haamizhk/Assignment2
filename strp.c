@@ -72,10 +72,15 @@ char *Str_search(const char *haystack, const char *needle)
     const char *needle_trace;
     assert(haystack != NULL);
     assert(needle != NULL);
+    /* If needle is the empty string, return haystack. */
     if (*needle == '\0')
     {
         return (char *)haystack;
     }
+    /* search through haystack for the first char of needle, if a match
+        is found then use needle_trace and haystack_trace to iterate
+        through to see if a complete match is found, keeping end of
+        strings in mind */
     while (*haystack != '\0')
     {
         if (*haystack == *needle)
@@ -85,10 +90,7 @@ char *Str_search(const char *haystack, const char *needle)
             while (*needle_trace != '\0' &&
                 *haystack_trace == *needle_trace)
             {
-                if (*haystack_trace == '\0')
-                {
-                    return NULL;
-                }
+                if (*haystack_trace == '\0') 
                 haystack_trace++;
                 needle_trace++;
             }
