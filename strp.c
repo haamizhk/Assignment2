@@ -1,3 +1,7 @@
+/* strp.c
+    implementation file for string module using pointers
+    author: Haamiz Humayun Kabir */
+
 #include "str.h"
 #include <assert.h>
 

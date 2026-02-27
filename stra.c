@@ -1,3 +1,7 @@
+/* stra.c
+    implementation file for string module using arrays
+    author: Haamiz Humayun Kabir */
+
 #include "str.h"
 #include <assert.h>
 

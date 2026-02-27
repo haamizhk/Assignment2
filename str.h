@@ -1,3 +1,7 @@
+/* str.h
+    interface file for string module
+    author: Haamiz Humayun Kabir */
+
 #ifndef STR_H
 #define STR_H
 #include <stddef.h>
