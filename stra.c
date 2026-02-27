@@ -23,7 +23,7 @@ char *Str_copy(char dst[], const char src[])
         index++;
     }
     dst[index] = '\0';
-    return src;
+    return dst + 1;
 }
 
 char *Str_concat(char dst[], const char src[])
