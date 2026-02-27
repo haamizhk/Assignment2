@@ -83,21 +83,22 @@ char *Str_search(const char *haystack, const char *needle)
         strings in mind */
     while (*haystack != '\0')
     {
-        if (*haystack == *needle)
+        if (*haystack != *needle)
         {
-            haystack_trace = haystack;
-            needle_trace = needle;
-            while (*needle_trace != '\0' &&
-                *haystack_trace == *needle_trace)
-            {
-                if (*haystack_trace == '\0') 
-                haystack_trace++;
-                needle_trace++;
-            }
-            if (*needle_trace == '\0')
-            {
-                return (char *)haystack;
-            }
+            haystack++;
+            continue;
+        }
+        haystack_trace = haystack;
+        needle_trace = needle;
+        while (*needle_trace != '\0' &&
+            *haystack_trace == *needle_trace)
+        {
+            haystack_trace++;
+            needle_trace++;
+        }
+        if (*needle_trace == '\0')
+        {
+            return (char *)haystack;
         }
         haystack++;
     }
