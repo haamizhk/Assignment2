@@ -34,28 +34,22 @@ static size_t replaceAndWrite(const char *pcLine,
       printf("%s", pcLine);
       return 0;
    }
-   else
+   while (*pcTrace != '\0')
    {
-      while (*pcTrace != '\0')
+      pcMatch = Str_search(pcTrace, pcFrom);
+      if (pcMatch == NULL)
       {
-         pcMatch = Str_search(pcTrace, pcFrom);
-         if (pcMatch == NULL)
-         {
-            printf("%s", pcTrace);
-            break;
-         }
-         else
-         {
-            while (pcTrace < pcMatch)
-            {
-               putchar(*pcTrace);
-               pcTrace++;
-            }
-            printf("%s", pcTo);
-            replace_count++;
-            pcTrace = pcMatch + from_length;
-         }
+         printf("%s", pcTrace);
+         break;
       }
+      while (pcTrace < pcMatch)
+      {
+         putchar(*pcTrace);
+         pcTrace++;
+      }
+      printf("%s", pcTo);
+      replace_count++;
+      pcTrace = pcMatch + from_length;
    }
    return replace_count;
 }
